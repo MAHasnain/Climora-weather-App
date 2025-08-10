@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --primary-Blue: #4F46E5;
+    --success-Green: #10B981;
+    --error-red: #EF4444;
+    --mutedText-gray: #c5c8cc;
+    --light-gray: #f0f0f0;
+}
+
+
+/* .inter-<uniquifier> {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} 
+  
+.nunito-<uniquifier> {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+.hidden {
+    display: none;
+}
+
+.container {
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    background-color: var(--light-gray);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    /* width: 60vw;
+    height: 50vh; */
+    border-radius: 10px;
+    padding: 50px 5% ;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-sec {
+    padding: 0 50px;
+    text-align: center;
+}
+
+.card h3 {
+    font-family: "Inter", sans-serif;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.img-sec {}
+
+.social_icon-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social_icons a {
+    font-size: larger;
+    margin: 2px;
+    padding: 10px 15px;
+    background-color: white;
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.10);
+
+    border-radius: 50%;
+}
+
+.inputs-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inp {}
+
+.pass-inputs {
+    display: flex;
+    justify-content: center;
+}
+
+.password input {
+    height: 40px;
+    width: 12vw;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background: none;
+    border: none;
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.10);
+}
+
+.password input::placeholder {
+    color: var(--mutedText-gray);
+}
+
+.inp input {
+    height: 40px;
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background: none;
+    border: none;
+    width: 25vw;
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.10);
+}
+
+.inp input::placeholder {
+    color: var(--mutedText-gray);
+}
+
+.inp input:focus {
+    background-color: var(--mutedText-gray);
+    border: none;
+}
+
+.display_error {
+    padding-left: 5px;
+    text-align: start;
+    color: var(--mutedText-gray);
+}
+
+.password input:focus {
+    background-color: var(--mutedText-gray);
+    border: none;
+}
+
+.inp input:focus::placeholder {
+    color: white;
+}
+
+.password input:focus::placeholder {
+    color: white;
+}
+
+/* Success Msg page */
+
+.success {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.fa-circle-check {
+    color: green;
+    font-size: 50px;
+}
+
+.fa-triangle-exclamation {
+    color: var(--error-red);
+    font-size: 50px;
+}
+
+.footer-sec {}
+
+.action_btn-sec {
+    padding: 10px;
+    color: white;
+}
+
+.action_btn-sec button {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: large;
+    background-color: #4F46E5;
+    color: white;
+    padding: 12px 17px;
+    border: none;
+    border-radius: 5px;
+    /* width: 12vw;
+    height: 40px; */
+    cursor: pointer;
+}
+
+.action_btn-sec a {
+    color: white;
+}
