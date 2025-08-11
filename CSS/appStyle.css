@@ -145,3 +145,10 @@ a {
     font-size: small;
     font-weight: 200;
 }
+
+#search_bar{
+    background-color: var(--snowyPrimary);
+}
+#search_bar input button{
+    background: none;
+}

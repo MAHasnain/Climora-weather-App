@@ -81,7 +81,7 @@ function loginUser() {
     for (let i = 0; i < users.length; i++) {
         if (users[i].userEmail === login_email.value && users[i].password === login_pass.value) {
             flag = true;
-            resultPage(`<i class="fa-solid fa-circle-check"></i>`, `Logged In`, `You are Logged In.`, `./index.html`, `Go to Home`)
+            resultPage(`<i class="fa-solid fa-circle-check"></i>`, `Logged In`, `You are Logged In.`, `../HTML/weather.html`, `Go to Home`)
         } else if (users[i].userEmail !== login_email.value && users[i].password === login_pass.value) {
             flag = true;
             let displayErrorEmail = document.querySelector(".email");
