@@ -10,6 +10,24 @@ html, body {
 }
 
 :root {
+    --sunsetPrimary: #FF7043;
+    --sunsetAccent: #FFB74D;
+    --sunnyPrimary: #FDB813;
+    --sunnyAccent: #FF6F00;
+    --rainyPrimary: #4A6572;
+    --rainyAccent: #0D47A1;
+    --snowyPrimary: #E3F2FD;
+    --snowyAccent: #90CAF9;
+    --cloudyPrimary: #90A4AE;
+    --cloudyAccent: #546E7A;
+    --deepBlack: #0D0D0D;
+}
+
+.prevent-select {
+    user-select: none;
+}
+
+:root {
     --primary-Blue: #4F46E5;
     --success-Green: #10B981;
     --error-red: #EF4444;
@@ -44,6 +62,24 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: linear-gradient(-45deg, #E3F2FD, #90CAF9, #90A4AE, #546E7A);
+    background-size: 300% 300%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .card {
@@ -51,11 +87,11 @@ html, body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background-color: #fff;
+    background-color: var(--snowyPrimary);
     /* width: 60vw;
     height: 50vh; */
     border-radius: 10px;
-    padding: 50px 5% ;
+    padding: 50px 5%;
 }
 
 a {
@@ -86,7 +122,7 @@ a {
     font-size: larger;
     margin: 2px;
     padding: 10px 15px;
-    background-color: white;
+    background-color: var(--snowyPrimary);
     box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.10);
 
     border-radius: 50%;

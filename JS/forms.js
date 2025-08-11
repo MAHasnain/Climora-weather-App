@@ -20,7 +20,7 @@ function registerUser() {
         for (let i = 0; i < users.length; i++) {
             if (users[i].userEmail === reg_email.value) {
                 // alert("User with this email already exists");
-                resultPage(`<i class="fa-solid fa-triangle-exclamation"></i>`, `Already Exist`, `Your account is already exist.`, `./login.html`, `Login`)
+                resultPage(`<i class="fa-solid fa-triangle-exclamation"></i>`, `Already Exist`, `Your account is already exist.`, `../weather.html`, `Login`)
             }
 
             const email_regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
