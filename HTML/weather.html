@@ -28,7 +28,8 @@
                     <div class="nav-items">
                         <form action="">
                             <div id="search_bar">
-                                <input type="search" name="" id="search_input" required>
+                                <input placeholder="Where’s the weather whispering today?" type="search" name=""
+                                    id="search_input" required>
                                 <button type="submit" id="search_btn">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
@@ -41,41 +42,54 @@
             <div class="weatherData_section ">
                 <div class="weatherTemp_main">
                     <div class="temp-and-name">
-                        <h1 class="temp">10</h1>
+                        <h1 class="temp"></h1>
                         <div class="name_date">
-                            <h3>Karachi</h3>
-                            <p class="date">
-                                06:06 - Thursday, 14 august
-                            </p>
+                            <h3 id="cityName_heading"></h3>
+                            <p class="date"></p>
                         </div>
                         <div class="icon">
-                            <img src="" alt="">
+                            <img src="" alt="" id="weather_icon">
                         </div>
                     </div>
                 </div>
                 <div class="details">
-                    <div class="another_location">
+                    <div class="another_location" id="featured_cities">
                         <h4>Another Location</h4>
-                        <div class="featured_cities"><a href="">Islamabad</a></div>
-                        <div class="featured_cities"><a href="">Istanbul</a></div>
-                        <div class="featured_cities"><a href="">Abu Dhabi</a></div>
-                        <div class="featured_cities"><a href="">Tehran</a></div>
-                        <div class="featured_cities"><a href="">Jakarta</a></div>
-                        <hr width="250px">
+                        <div class="featured_cities"><span>
+                                Islamabad
+                            </span>
+                        </div>
+                        <div class="featured_cities"><span>
+                                Istanbul
+                            </span>
+                        </div>
+                        <div class="featured_cities"><span>
+                                Abu Dhabi
+                            </span>
+                        </div>
+                        <div class="featured_cities"><span>
+                                Tehran
+                            </span>
+                        </div>
+                        <div class="featured_cities"><span>
+                                Jakarta
+                            </span>
+                        </div>
+                        <hr width="280px">
                     </div>
                     <div class="weatherDets">
                         <h4>Weather Details</h4>
                         <div class="weatherValues">
                             <p>Cloudy</p>
-                            <p>10%</p>
+                            <span id="cloudy"></span>
                         </div>
                         <div class="weatherValues">
                             <p>Humidity</p>
-                            <p>10%</p>
+                            <span id="humidity"></span>
                         </div>
                         <div class="weatherValues">
                             <p>Wind</p>
-                            <p>10km/h</p>
+                            <span id="wind"></span>
                         </div>
                     </div>
                 </div>
@@ -86,6 +100,9 @@
     <footer></footer>
 
     <script src="sweetalert2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js"
+        integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
