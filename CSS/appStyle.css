@@ -7,6 +7,7 @@
 html, body {
     height: 100%;
     width: 100%;
+    color: var(--snowyPrimary);
 }
 
 /* .inter-<uniquifier> {
@@ -42,6 +43,14 @@ html, body {
 
 a {
     text-decoration: none;
+    color: var(--snowyPrimary);
+}
+
+.bg_gif {
+    background-image: url(../assets/bg_images/michael-diane-weidner-h-rP5KSC2W0-unsplash.jpg);
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .navbar {
@@ -49,13 +58,11 @@ a {
     position: sticky;
     top: 0;
     padding: 10px 16px;
-}
-
-.logo {
- display: flex;
- justify-content: center;
- align-items: center;
- gap: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.7);
 }
 
 .navbar-brand {
@@ -83,12 +90,52 @@ a {
     border-radius: 8px;
 }
 
+.glass-card {
+    /* background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px); */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 10px 5px rgba(255, 255, 255, 0.5);
+    /* position: relative; */
+    overflow: hidden;
+}
+
+/* .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent);
+}
+
+.glass-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.8),
+            transparent,
+            rgba(255, 255, 255, 0.3));
+} */
+
 .home_section {
     padding: 30px;
     width: 100%;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     background: linear-gradient(-45deg, #E3F2FD, #90CAF9, #90A4AE, #546E7A);
@@ -168,11 +215,8 @@ a {
 #search_bar input[type="text"] {
     flex-grow: 1;
     border: none;
-
     background-color: transparent;
-    /* Transparent background for input */
     outline: none;
-    /* Remove default outline */
     font-size: 16px;
     color: #333;
 }
@@ -180,4 +224,92 @@ a {
 #search_bar button {
     color: var(--cloudyAccent);
     margin: 0 5px 0 0;
+}
+
+.weatherData_section {
+    font-family: "Inter", sans-serif;
+    padding: 30px;
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.weatherTemp_main {
+    width: 60%;
+    padding: 50px;
+    padding: 30px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: start;
+}
+
+.details {
+    border-radius: 10px;
+    padding: 50px 20px;
+    font-family: "Nunito", sans-serif;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.3);
+    /* backdrop-filter: blur(13px); */
+    /* -webkit-backdrop-filter: blur(20px); */
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.temp-and-name {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 15px;
+}
+
+.another_location {
+    padding: 0 0 40px 30px;
+}
+
+.another_location h4 {
+    font-family: "Inter", sans-serif;
+}
+
+.featured_cities {
+    padding: 10px 10px;
+}
+
+.weatherDets {
+    padding: 0 30px;
+}
+
+.weatherDets h4 {
+    font-family: "Inter", sans-serif;
+}
+
+.name_date {
+    padding-bottom: 10px;
+}
+
+.temp-and-name h1 {
+    font-size: 100px;
+}
+
+.temp-and-name h3 {
+    font-size: 40px;
+    line-height: 30px;
+}
+
+.temp-and-name p {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.weatherValues {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
