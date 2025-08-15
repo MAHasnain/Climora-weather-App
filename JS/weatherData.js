@@ -9,33 +9,42 @@ const weather_icon = document.querySelector("#weather_icon");
 // Initial state 
 
 function userLocalWeather() {
-    navigator.geolocation.getCurrentPosition(async (position) => {
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
-        const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+    try {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
 
-        let response = await fetch(API_URL);
-        let data = await response.json()
-        console.log(data);
+            let response = await fetch(API_URL);
+            let data = await response.json()
+            console.log(data);
 
-        tempHeading.textContent = Math.round(data.main.temp) + '\u00B0C';
-        cityName.textContent = data.name;
-        // weather_icon.src = data.weather[0].icon + ".png";
-        cloudy.textContent = data.clouds.all + "%";
-        humidity.textContent = data.main.humidity + "%";
-        wind.textContent = data.wind.speed + "km/h";
+            tempHeading.textContent = Math.round(data.main.temp) + '\u00B0C';
+            cityName.textContent = data.name;
+            // weather_icon.src = data.weather[0].icon + ".png";
+            cloudy.textContent = data.clouds.all + "%";
+            humidity.textContent = data.main.humidity + "%";
+            wind.textContent = data.wind.speed + "km/h";
 
-    }, (error) => {
+        }, (error) => {
+            console.error(error);
+            document.querySelector(".weatherData_section").classList.add("hidden");
+            document.querySelector(".errorMsg").classList.remove("hidden");
+            if (error.code == error.PERMISSION_DENIED) {
+                document.querySelector("#locationError").textContent = "Climora can't feel your weather without location access. Please enable it.";
+            } else if (error.code == error.PERMISSION_UNAVAILABLE) {
+                document.querySelector("#locationError").textContent = "Oops! Something went wrong while getting your location.";
+            } else {
+                document.querySelector("#locationError").textContent = "❌ Oops! Something went wrong while getting your location."
+            }
+        })
+
+    } catch (error) {
         console.error(error);
-        document.querySelector(".weatherData_section").classList.add("hidden")
-        if (error.code == 1) {
-            
-            // alert("Error: Access is denied!");
-        } else if (error.code == 2) {
-            document.querySelector(".details").classList.add("hidden")
-            // alert("Position is unavailable!");
-        }
-    })
+        // let weather_section = document.querySelector("#weatherData_section")
+        // weather_section.classList.add("hidden")
+    }
+
 }
 userLocalWeather();
 
@@ -44,11 +53,14 @@ searchBtn.addEventListener('click', async e => {
     e.preventDefault();
     const searchInput = document.querySelector("#search_input");
 
-    const CITYNAME_URL = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value.toLowerCase()}&appid=${API_KEY}&units=metric`;
+    const CITYNAME_URL = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value.toLowerCase().trim()}&appid=${API_KEY}&units=metric`;
 
     let response = await fetch(CITYNAME_URL)
     const data = await response.json();
     console.log(data);
+
+    document.querySelector(".weatherData_section").classList.remove("hidden");
+    document.querySelector(".errorMsg").classList.add("hidden");
 
     tempHeading.textContent = Math.round(data.main.temp) + '\u00B0C';
     cityName.textContent = data.name;

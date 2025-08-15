@@ -41,10 +41,6 @@ html, body {
     user-select: none;
 }
 
-.hidden {
-    display: none;
-}
-
 a {
     text-decoration: none;
     color: var(--snowyPrimary);
@@ -317,4 +313,21 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+}
+
+.errorMsg {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.errorMsg p {
+    font-family: "Nunito", sans-serif;
+    font-size: xx-large;
+}
+
+.hidden {
+    display: none;
 }
