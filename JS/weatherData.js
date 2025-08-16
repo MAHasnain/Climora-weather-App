@@ -112,7 +112,12 @@ searchBtn.addEventListener('click', async e => {
             background.style.backgroundImage = `url(../assets/bg_images/sunnysky.gif)`;
         }
 
+        // remove active city styling from all cities
+        const cityLis = document.querySelectorAll(".featured_cities")
+        cityLis.forEach(c => c.classList.remove("active-city"));
+        
         // if city is valid, then show weather data section
+
         document.querySelector(".weatherData_section").classList.remove("hidden");
         document.querySelector(".errorMsg").classList.add("hidden");
 
