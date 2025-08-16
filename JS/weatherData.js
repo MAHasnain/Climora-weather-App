@@ -26,8 +26,10 @@ function userLocalWeather() {
                 background.style.backgroundImage = `url(../assets/bg_images/few_clouds.gif)`;
             } else if (data.weather[0].description === "scattered clouds") {
                 background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
-            } else if (data.weather[0].description === "clear sky") {
-                background.style.backgroundImage = `url(../assets/bg_images/clear_sky.mp4)`;
+            } else if (data.weather[0].main === "Clear") {
+                background.style.backgroundImage = `url(../assets/bg_images/clear_sky.gif)`;
+            } else if (data.weather[0].main === "Clouds") {
+                background.style.backgroundImage = `url(../assets/bg_images/clouds.gif)`;
             } else if (data.weather[0].main === "Rain") {
                 background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
             } else if (data.weather[0].main === "Drizzle") {
@@ -36,6 +38,8 @@ function userLocalWeather() {
                 background.style.backgroundImage = `url(../assets/bg_images/snowy.gif)`;
             } else if (data.weather[0].main === "Thunderstorm") {
                 background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+            } else {
+                background.style.backgroundImage = `url(../assets/bg_images/sunnysky.gif)`;
             }
 
 
@@ -87,8 +91,10 @@ searchBtn.addEventListener('click', async e => {
             background.style.backgroundImage = `url(../assets/bg_images/few_clouds.gif)`;
         } else if (data.weather[0].description === "scattered clouds") {
             background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
-        } else if (data.weather[0].description === "clear sky") {
-            background.style.backgroundImage = `url(../assets/bg_images/clear_sky.mp4)`;
+        } else if (data.weather[0].main === "Clear") {
+            background.style.backgroundImage = `url(../assets/bg_images/clear_sky.gif)`;
+        } else if (data.weather[0].main === "Clouds") {
+            background.style.backgroundImage = `url(../assets/bg_images/clouds.gif)`;
         } else if (data.weather[0].main === "Rain") {
             background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
         } else if (data.weather[0].main === "Drizzle") {
@@ -97,6 +103,8 @@ searchBtn.addEventListener('click', async e => {
             background.style.backgroundImage = `url(../assets/bg_images/snowy.gif)`;
         } else if (data.weather[0].main === "Thunderstorm") {
             background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+        } else {
+            background.style.backgroundImage = `url(../assets/bg_images/sunnysky.gif)`;
         }
 
         tempHeading.textContent = Math.round(data.main.temp) + '\u00B0C';
@@ -147,15 +155,17 @@ cities.childNodes.forEach(city => {
 
             let response = await fetch(CITYNAME_URL)
             let data = await response.json();
-            // console.log(data);
+            console.log(data);
 
             // Bg change on weather condition
             if (data.weather[0].description === "few clouds") {
                 background.style.backgroundImage = `url(../assets/bg_images/few_clouds.gif)`;
             } else if (data.weather[0].description === "scattered clouds") {
                 background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
-            } else if (data.weather[0].description === "clear sky") {
-                background.style.backgroundImage = `url(../assets/bg_images/clear_sky.mp4)`;
+            } else if (data.weather[0].main === "Clear") {
+                background.style.backgroundImage = `url(../assets/bg_images/clear_sky.gif)`;
+            } else if (data.weather[0].main === "Clouds") {
+                background.style.backgroundImage = `url(../assets/bg_images/clouds.gif)`;
             } else if (data.weather[0].main === "Rain") {
                 background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
             } else if (data.weather[0].main === "Drizzle") {
@@ -164,6 +174,8 @@ cities.childNodes.forEach(city => {
                 background.style.backgroundImage = `url(../assets/bg_images/snowy.gif)`;
             } else if (data.weather[0].main === "Thunderstorm") {
                 background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+            } else {
+                background.style.backgroundImage = `url(../assets/bg_images/sunnysky.gif)`;
             }
 
             // active city styling change
