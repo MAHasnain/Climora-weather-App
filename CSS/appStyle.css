@@ -307,14 +307,17 @@ li {
 
 .temp-and-name h1 {
     font-size: 100px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .temp-and-name h3 {
     font-size: 40px;
     line-height: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .temp-and-name p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     font-size: 13px;
     font-weight: 500;
 }
@@ -336,6 +339,7 @@ li {
 .errorMsg p {
     font-family: "Nunito", sans-serif;
     font-size: xx-large;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hidden {

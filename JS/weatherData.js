@@ -83,8 +83,13 @@ searchBtn.addEventListener('click', async e => {
         const data = await response.json();
         console.log(data);
 
-        document.querySelector(".weatherData_section").classList.remove("hidden");
-        document.querySelector(".errorMsg").classList.add("hidden");
+        // city name is invalid
+        if (data.cod == "404") {
+            document.querySelector(".weatherData_section").classList.add("hidden");
+            document.querySelector(".errorMsg").classList.remove("hidden");
+            document.getElementById("error").textContent = `City name is Invalid.`;
+            searchInput.value = ""
+        }
 
         // Bg change on weather condition
         if (data.weather[0].description === "few clouds") {
@@ -107,6 +112,11 @@ searchBtn.addEventListener('click', async e => {
             background.style.backgroundImage = `url(../assets/bg_images/sunnysky.gif)`;
         }
 
+        // if city is valid, then show weather data section
+        document.querySelector(".weatherData_section").classList.remove("hidden");
+        document.querySelector(".errorMsg").classList.add("hidden");
+
+        // active city styling change
         tempHeading.textContent = Math.round(data.main.temp) + '\u00B0C';
         cityName.textContent = data.name;
         // weather_icon.src = data.weather[0].icon + ".png";
@@ -117,11 +127,11 @@ searchBtn.addEventListener('click', async e => {
     } catch (err) {
         console.error(err)
         // console.error(err.message)
-        if (err.status == "404") {
+
+        if (err.message === "Failed to fetch") {
             document.querySelector(".weatherData_section").classList.add("hidden");
             document.querySelector(".errorMsg").classList.remove("hidden");
-            document.getElementById("error").textContent = `City name is Invalid.`;
-            searchInput.value = ""
+            document.getElementById("error").textContent = `Network Error. Please check your internet connection.`;
         }
     }
 });
