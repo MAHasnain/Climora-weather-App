@@ -6,6 +6,8 @@ const wind = document.querySelector("#wind");
 const tempHeading = document.querySelector(".temp");
 const cityName = document.querySelector("#cityName_heading");
 const weather_icon = document.querySelector("#weather_icon");
+const background = document.querySelector(".bg_gif");
+
 // Initial state 
 
 function userLocalWeather() {
@@ -18,6 +20,24 @@ function userLocalWeather() {
             let response = await fetch(API_URL);
             let data = await response.json()
             console.log(data);
+
+            // Bg change on weather condition
+            if (data.weather[0].description === "few clouds") {
+                background.style.backgroundImage = `url(../assets/bg_images/few_clouds.gif)`;
+            } else if (data.weather[0].description === "scattered clouds") {
+                background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+            } else if (data.weather[0].description === "clear sky") {
+                background.style.backgroundImage = `url(../assets/bg_images/clear_sky.mp4)`;
+            } else if (data.weather[0].main === "Rain") {
+                background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
+            } else if (data.weather[0].main === "Drizzle") {
+                background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
+            } else if (data.weather[0].main === "Snow") {
+                background.style.backgroundImage = `url(../assets/bg_images/snowy.gif)`;
+            } else if (data.weather[0].main === "Thunderstorm") {
+                background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+            }
+
 
             tempHeading.textContent = Math.round(data.main.temp) + '\u00B0C';
             cityName.textContent = data.name;
@@ -61,6 +81,23 @@ searchBtn.addEventListener('click', async e => {
 
         document.querySelector(".weatherData_section").classList.remove("hidden");
         document.querySelector(".errorMsg").classList.add("hidden");
+
+        // Bg change on weather condition
+        if (data.weather[0].description === "few clouds") {
+            background.style.backgroundImage = `url(../assets/bg_images/few_clouds.gif)`;
+        } else if (data.weather[0].description === "scattered clouds") {
+            background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+        } else if (data.weather[0].description === "clear sky") {
+            background.style.backgroundImage = `url(../assets/bg_images/clear_sky.mp4)`;
+        } else if (data.weather[0].main === "Rain") {
+            background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
+        } else if (data.weather[0].main === "Drizzle") {
+            background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
+        } else if (data.weather[0].main === "Snow") {
+            background.style.backgroundImage = `url(../assets/bg_images/snowy.gif)`;
+        } else if (data.weather[0].main === "Thunderstorm") {
+            background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+        }
 
         tempHeading.textContent = Math.round(data.main.temp) + '\u00B0C';
         cityName.textContent = data.name;
@@ -111,6 +148,23 @@ cities.childNodes.forEach(city => {
             let response = await fetch(CITYNAME_URL)
             let data = await response.json();
             // console.log(data);
+
+            // Bg change on weather condition
+            if (data.weather[0].description === "few clouds") {
+                background.style.backgroundImage = `url(../assets/bg_images/few_clouds.gif)`;
+            } else if (data.weather[0].description === "scattered clouds") {
+                background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+            } else if (data.weather[0].description === "clear sky") {
+                background.style.backgroundImage = `url(../assets/bg_images/clear_sky.mp4)`;
+            } else if (data.weather[0].main === "Rain") {
+                background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
+            } else if (data.weather[0].main === "Drizzle") {
+                background.style.backgroundImage = `url(../assets/bg_images/rainy.gif)`;
+            } else if (data.weather[0].main === "Snow") {
+                background.style.backgroundImage = `url(../assets/bg_images/snowy.gif)`;
+            } else if (data.weather[0].main === "Thunderstorm") {
+                background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
+            }
 
             // active city styling change
             const cityLis = document.querySelectorAll(".featured_cities")
