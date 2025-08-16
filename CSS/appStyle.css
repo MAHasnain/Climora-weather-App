@@ -280,7 +280,17 @@ a {
 }
 
 .featured_cities {
-    padding: 10px 10px;
+    padding: 10px -10px;
+}
+
+.featured_cities:hover {
+    color: var(--snowyAccent);
+}
+
+li {
+    list-style: none;
+    padding: 10px 0;
+    cursor: pointer;
 }
 
 .weatherDets {
@@ -330,4 +340,16 @@ a {
 
 .hidden {
     display: none;
+}
+
+.active-city {
+    /* color: var(--rainyAccent); */
+    background: linear-gradient(135deg, #4facfe, #00f2fe, 0.7);
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 60%;
 }
