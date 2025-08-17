@@ -85,6 +85,7 @@ searchBtn.addEventListener('click', async e => {
 
         // city name is invalid
         if (data.cod == "404") {
+            background.style.backgroundImage = `linear-gradient(-45deg, #E3F2FD, #90CAF9, #90A4AE, #546E7A)`;
             document.querySelector(".weatherData_section").classList.add("hidden");
             document.querySelector(".errorMsg").classList.remove("hidden");
             document.getElementById("error").textContent = `City name is Invalid.`;
@@ -97,7 +98,7 @@ searchBtn.addEventListener('click', async e => {
         } else if (data.weather[0].description === "scattered clouds") {
             background.style.backgroundImage = `url(../assets/bg_images/scattered_cloudy.gif)`;
         } else if (data.weather[0].main === "Clear") {
-            background.style.backgroundImage = `url(../assets/bg_images/clear_sky.gif)`;
+            background.style.backgroundImage = `url(../assets/bg_images/sunnysky.gif)`;
         } else if (data.weather[0].main === "Clouds") {
             background.style.backgroundImage = `url(../assets/bg_images/clouds.gif)`;
         } else if (data.weather[0].main === "Rain") {
@@ -115,7 +116,7 @@ searchBtn.addEventListener('click', async e => {
         // remove active city styling from all cities
         const cityLis = document.querySelectorAll(".featured_cities")
         cityLis.forEach(c => c.classList.remove("active-city"));
-        
+
         // if city is valid, then show weather data section
 
         document.querySelector(".weatherData_section").classList.remove("hidden");

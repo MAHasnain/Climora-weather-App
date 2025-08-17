@@ -47,7 +47,7 @@ a {
 }
 
 .bg_gif {
-    background-image: url(../assets/bg_images/b5d87317c9a1df50e85585e0b37cdf7e.gif);
+    /* background-image: url(../assets/bg_images/b5d87317c9a1df50e85585e0b37cdf7e.gif); */
     /* background-attachment: fixed; */
     background-size: cover;
     background-repeat: no-repeat;
